@@ -21,8 +21,7 @@ router.post("/notes", (req, res) => {
 router.delete("/notes/:id", (req, res) => {
   const noteId = parseInt(req.params.id);
   let newNoteList = [];
-  console.log(noteList[1].id);
-  console.log(noteId);
+
   for (let i = 0; i < noteList.length; i++) {
     if (noteList[i].id !== noteId) {
       newNoteList.push(noteList[i]);
@@ -32,8 +31,6 @@ router.delete("/notes/:id", (req, res) => {
   fs.writeFile("./db/db.json", JSON.stringify(newNoteList), {}, (e) =>
     console.log(e)
   );
-
-  console.log(newNoteList);
 });
 
 module.exports = router;
