@@ -1,2 +1,4 @@
 /node_modules
 readme-gen.js
+.env
+package-lock.json
