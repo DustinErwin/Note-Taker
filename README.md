@@ -17,7 +17,10 @@ A web application to allow the user to compose, save, and delete notes.
 
 ## Installation
 
+![Note Taker](https://user-images.githubusercontent.com/70966543/102001822-4b543b00-3cc4-11eb-862a-fff3f736cf4c.gif)
+
 This is a web application find it here!
+(https://dustin-erwin-note-taker.herokuapp.com/)
 
 ## License
 
