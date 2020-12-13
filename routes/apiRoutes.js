@@ -28,7 +28,7 @@ router.delete("/notes/:id", (req, res) => {
     }
   }
 
-  fs.writeFile("./db/db.json", JSON.stringify(newNoteList), {}, (e) =>
+  fs.writeFileSync("./db/db.json", JSON.stringify(newNoteList), {}, (e) =>
     console.log(e)
   );
 });
