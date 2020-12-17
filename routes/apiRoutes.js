@@ -31,6 +31,8 @@ router.delete("/notes/:id", (req, res) => {
     if (noteList[i].id !== noteId) {
       newNoteList.push(noteList[i]);
     }
+    console.log(noteList[i]);
+    console.log(noteId);
   }
 
   fs.writeFileSync(
