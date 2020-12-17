@@ -13,9 +13,10 @@ router.post("/notes", (req, res) => {
     id: Math.floor(Math.random() * 100000),
   };
   noteList.push(note);
-  fs.writeFile("./db/db.json", JSON.stringify(noteList), {}, (e) =>
+  fs.writeFileSync("./db/db.json", JSON.stringify(noteList), {}, (e) =>
     console.log(e)
   );
+  res.json(noteList);
 });
 
 router.delete("/notes/:id", (req, res) => {
@@ -31,6 +32,7 @@ router.delete("/notes/:id", (req, res) => {
   fs.writeFileSync("./db/db.json", JSON.stringify(newNoteList), {}, (e) =>
     console.log(e)
   );
+  res.json(noteList);
 });
 
 module.exports = router;
