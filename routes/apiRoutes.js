@@ -15,7 +15,7 @@ router.post("/notes", (req, res) => {
   };
   noteList.push(note);
   fs.writeFileSync(
-    path.join(__dirname, "./db/db.json"),
+    path.join(__dirname, "../db/db.json"),
     JSON.stringify(noteList),
     {},
     (e) => console.log(e)
@@ -34,7 +34,7 @@ router.delete("/notes/:id", (req, res) => {
   }
 
   fs.writeFileSync(
-    path.join(__dirname, "./db/db.json"),
+    path.join(__dirname, "../db/db.json"),
     JSON.stringify(newNoteList),
     {},
     (e) => console.log(e)
