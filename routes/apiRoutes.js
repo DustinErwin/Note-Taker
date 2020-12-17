@@ -41,6 +41,9 @@ router.delete("/notes/:id", (req, res) => {
     {},
     (e) => console.log(e)
   );
+
+  noteList = newNoteList;
+
   res.json(noteList);
 });
 
