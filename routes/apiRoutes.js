@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const fs = require("fs");
+const path = require("path");
 const noteList = require("../db/db");
 
 router.get("/notes", (req, res) => {
@@ -13,8 +14,11 @@ router.post("/notes", (req, res) => {
     id: Math.floor(Math.random() * 100000),
   };
   noteList.push(note);
-  fs.writeFileSync("./db/db.json", JSON.stringify(noteList), {}, (e) =>
-    console.log(e)
+  fs.writeFileSync(
+    path.join(__dirname, "./db/db.json"),
+    JSON.stringify(noteList),
+    {},
+    (e) => console.log(e)
   );
   res.json(noteList);
 });
@@ -29,8 +33,11 @@ router.delete("/notes/:id", (req, res) => {
     }
   }
 
-  fs.writeFileSync("./db/db.json", JSON.stringify(newNoteList), {}, (e) =>
-    console.log(e)
+  fs.writeFileSync(
+    path.join(__dirname, "./db/db.json"),
+    JSON.stringify(newNoteList),
+    {},
+    (e) => console.log(e)
   );
   res.json(noteList);
 });
