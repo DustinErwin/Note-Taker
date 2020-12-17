@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const fs = require("fs");
 const path = require("path");
-const noteList = require("../db/db");
+let noteList = require("../db/db");
 
 router.get("/notes", (req, res) => {
   res.send(noteList);
